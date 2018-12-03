@@ -6,7 +6,7 @@ $(document).ready(function(){
     function getEmployee(){
         $.ajax({
             type: "GET",
-            url: "http://localhost:8080/api/employee",
+            url: "/api/employee",
             dataType: "json",
             headers: {
                 "Content-Type": "application/json"
