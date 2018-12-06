@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/dashboard.css" />
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/employee-form.js"></script>
+
+    <title>Add Employees</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">AA Inventory System</a>
+        <ul class="navbar-nav px-3">
+          <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">Sign out</a>
+          </li>
+        </ul>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../dashboard/dashboard.html">
+                                <span data-feather="dashboard"></span>
+                                Dashboard 
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../products/products.html">
+                                <span data-feather="products"></span>
+                                Products
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../transactions/transactions.html">
+                                <span data-feather="transactions"></span>
+                                Transactions
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../employees/employees.html">
+                                <span data-feather="employees"></span>
+                                Employees <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../supervisor/supervisor.html">
+                                <span data-feather="supervisor"></span>
+                                Supervisor
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">Add Employee</li>
+            </ol>
+        </nav>
+        <div class="form-box">
+            <form id="employee-form">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input id="username" type="text" class="form-control" placeholder="Enter username"/>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input id="password" type="password" class="form-control" placeholder="Enter password"/>
+                </div>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input id="fullname" type="text" class="form-control" placeholder="Enter email"/>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input id="email" type="email" class="form-control" placeholder="Enter email"/>
+                    <small class="form-text text-muted">We'll never share your email with anyone</small>
+                </div>
+                <div class="form-group">
+                    <label>Address</label>
+                    <textarea id="address" class="form-control" rows="5"></textarea>                    
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input id="phone" type="text" class="form-control" placeholder="Enter phone number"/>
+                </div>
+                <div class="form-group">
+                    <label>Profile Image</label>
+                    <input id="image" type="text" class="form-control" placeholder="Enter file path"/>
+                </div>
+                <!-- <div class="form-group">
+                    <label>Profile Image</label>
+                    <div class="custom-file">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                        <input type="file" class="custom-file-input" id="customFile">
+                    </div>
+                </div> -->
+                <button class="btn btn-success" type="submit">Add Employee</button>
+                <button class="btn btn-primary" type="submit">Back</button>
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>

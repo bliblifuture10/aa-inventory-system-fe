@@ -1,25 +1,21 @@
 $(document).ready(function(){
-    $("#employee-form").submit(function(event){
-        addEmployee();
+    $("#product-form").submit(function(event){
+        addProduct();
     });
 
-    function addEmployee(){
+    function addProduct(){
         var formData = {
-            username: $("#username").val(),
-            password: $("#password").val(),
-            fullname: $("#fullname").val(),
-            email: $("#email").val(),
-            address: $("#address").val(),
-            phone: $("#phone").val(),
-            image: $("#image").val(),
-            supervisor : null,
-            role : null
+            name: $("#prod-name").val(),
+            category: $("#prod-category").val(),
+            stock: $("prod-stock").val(),
+            price: $("prod-price").val(),
+            picture: $("prod-image").val()
         };
 
         $.ajax({
             type: "POST",
             contentType: "application/json",
-            url: "/api/employee",
+            url: "/api/product",
             data: JSON.stringify(formData),
             dataType: "json",
             success: function(response){
