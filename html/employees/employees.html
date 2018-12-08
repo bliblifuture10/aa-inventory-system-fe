@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/template/template.css" />
     <script src="../../js/jquery-3.3.1.min.js"></script>
-    <script src="../../js/employees.js"></script>
+    <script src="../../js/employees/employees.js"></script>
 
     <title>Employees</title>
 </head>
@@ -60,6 +60,12 @@
     </div>
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+        <h1>Employees</h1>
+        <div class="form-group">
+            <input id="fullname" type="text" class="form-control" placeholder="Search employee"/>
+        </div>
+        <a class="btn btn-success" href="employee-add-form.html" style="float: right;">Add Employee</a>
+        <br><br><br>
         <table class="table table-bordered">
             <thead class="thead-dark">
                 <tr>
@@ -68,11 +74,13 @@
                     <th scope="col">Email</th>
                     <th scope="col">Address</th>
                     <th scope="col">Phone</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody id="table-content">
             </tbody>
         </table>
+        <!-- <button id="get-employee-by-id" class="btn" type="button">Get by Id</button> -->
     </main>
 
 </body>

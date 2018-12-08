@@ -5,11 +5,11 @@ $(document).ready(function(){
 
     function addProduct(){
         var formData = {
-            name: $("#prod-name").val(),
-            category: $("#prod-category").val(),
-            stock: $("prod-stock").val(),
-            price: $("prod-price").val(),
-            picture: $("prod-image").val()
+            name: $("#name").val(),
+            category: $("#category").val(),
+            stock: $("stock").val(),
+            price: $("price").val(),
+            image: $("image").val()
         };
 
         $.ajax({
@@ -19,9 +19,7 @@ $(document).ready(function(){
             data: JSON.stringify(formData),
             dataType: "json",
             success: function(response){
-                if(response.status == "Done"){
-                    console.log(response);
-                }
+                alert("Product added");
             },
             error: function(xhr, status, error){
                 var err = eval("(" + xhr.responseText + ")");

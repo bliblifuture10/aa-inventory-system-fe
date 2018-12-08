@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/template/template.css" />
     <script src="../../js/jquery-3.3.1.min.js"></script>
-    <script src="../../js/employee-form.js"></script>
+    <script src="../../js/products/product-update-form.js"></script>
 
-    <title>Add Employees</title>
+    <title>Update Product</title>
 </head>
 <body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
@@ -26,13 +26,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../dashboard/dashboard.html">
                                 <span data-feather="dashboard"></span>
-                                Dashboard 
+                                Dashboard
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../products/products.html">
+                            <a class="nav-link active" href="../products/products.html">
                                 <span data-feather="products"></span>
-                                Products
+                                Products <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -42,9 +42,9 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="../employees/employees.html">
+                            <a class="nav-link" href="../employees/employees.html">
                                 <span data-feather="employees"></span>
-                                Employees <span class="sr-only">(current)</span>
+                                Employees
                             </a>
                         </li>
                         <li class="nav-item">
@@ -62,39 +62,30 @@
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item">Add Employee</li>
+                <li class="breadcrumb-item">Update Product</li>
             </ol>
         </nav>
         <div class="form-box">
-            <form id="employee-form">
+            <form id="product-form">
                 <div class="form-group">
-                    <label>Username</label>
-                    <input id="username" type="text" class="form-control" placeholder="Enter username"/>
+                    <label>Name</label>
+                    <input id="name" type="text" class="form-control" placeholder="Enter product name" required/>
                 </div>
                 <div class="form-group">
-                    <label>Password</label>
-                    <input id="password" type="password" class="form-control" placeholder="Enter password"/>
+                    <label>Category</label>
+                    <input id="category" type="text" class="form-control" placeholder="Enter product category" required/>
                 </div>
                 <div class="form-group">
-                    <label>Full Name</label>
-                    <input id="fullname" type="text" class="form-control" placeholder="Enter email"/>
+                    <label>Stock</label>
+                    <input id="stock" type="text" class="form-control" placeholder="Enter product stock" required/>
                 </div>
                 <div class="form-group">
-                    <label>Email</label>
-                    <input id="email" type="email" class="form-control" placeholder="Enter email"/>
-                    <small class="form-text text-muted">We'll never share your email with anyone</small>
+                    <label>Price</label>
+                    <input id="price" type="text" class="form-control" placeholder="Enter product price" required/>
                 </div>
                 <div class="form-group">
-                    <label>Address</label>
-                    <textarea id="address" class="form-control" rows="5"></textarea>                    
-                </div>
-                <div class="form-group">
-                    <label>Phone</label>
-                    <input id="phone" type="text" class="form-control" placeholder="Enter phone number"/>
-                </div>
-                <div class="form-group">
-                    <label>Profile Image</label>
-                    <input id="image" type="text" class="form-control" placeholder="Enter file path"/>
+                    <label>Product Image</label>
+                    <input id="image" type="text" class="form-control" placeholder="Enter phone number" required/>
                 </div>
                 <!-- <div class="form-group">
                     <label>Profile Image</label>
@@ -103,8 +94,8 @@
                         <input type="file" class="custom-file-input" id="customFile">
                     </div>
                 </div> -->
-                <button class="btn btn-success" type="submit">Add Employee</button>
-                <button class="btn btn-primary" type="submit">Back</button>
+                <button class="btn btn-success" type="submit">Update Product</button>
+                <a id="back" class="btn btn-primary">Back</a>
             </form>
         </div>
     </main>

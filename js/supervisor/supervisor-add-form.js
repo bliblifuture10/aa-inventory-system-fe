@@ -1,37 +1,33 @@
 $(document).ready(function(){
-    $("#employee-form").submit(function(event){
-        addEmployee();
+    $("#supervisor-form").submit(function(){
+        addSupervisor();
     });
 
-    function addEmployee(){
+    function addSupervisor(){
         var formData = {
             username: $("#username").val(),
             password: $("#password").val(),
-            fullname: $("#fullname").val(),
+            name: $("#fullname").val(),
             email: $("#email").val(),
             address: $("#address").val(),
             phone: $("#phone").val(),
             image: $("#image").val(),
-            supervisor : null,
             role : null
         };
-
+        
         $.ajax({
             type: "POST",
             contentType: "application/json",
-            url: "/api/employee",
+            url: "/api/supervisor",
             data: JSON.stringify(formData),
             dataType: "json",
             success: function(response){
-                if(response.status == "Done"){
-                    console.log(response);
-                }
+                document.location.replace("./supervisor.html");
             },
-            error: function(xhr, status, error){
-                var err = eval("(" + xhr.responseText + ")");
-                
-                alert(err.message);
+            error: function(){
+                alert("Error");
             }
         });
     }
+
 });

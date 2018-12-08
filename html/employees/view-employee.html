@@ -4,9 +4,9 @@
     <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../../css/template/template.css" />
     <script src="../../js/jquery-3.3.1.min.js"></script>
-    <script src="../../js/products/products.js"></script>
+    <script src="../../js/employees/view-employee.js"></script>
 
-    <title>Products</title>
+    <title>Employees</title>
 </head>
 <body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
@@ -26,13 +26,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../dashboard/dashboard.html">
                                 <span data-feather="dashboard"></span>
-                                Dashboard
+                                Dashboard 
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="../products/products.html">
+                            <a class="nav-link" href="../products/products.html">
                                 <span data-feather="products"></span>
-                                Products <span class="sr-only">(current)</span>
+                                Products
                             </a>
                         </li>
                         <li class="nav-item">
@@ -41,10 +41,10 @@
                                 Transactions
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="../employees/employees.html">
                                 <span data-feather="employees"></span>
-                                Employees
+                                Employees <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -60,26 +60,9 @@
     </div>
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-        <h1>Products</h1>
-        <div class="form-group">
-            <input id="fullname" type="text" class="form-control" placeholder="Search products"/>
-        </div>
-        <a class="btn btn-success" href="product-add-form.html" style="float: right;">Add Product</a>
-        <br><br><br>
-        <table class="table table-bordered">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Product</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">Stock</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody id="table-content">
-            </tbody>
-        </table>
+        <div id="employee-profile"></div>
+        <a id="update-employee" class="btn btn-secondary">Update</a>
+        <a class="btn btn-primary" href="employees.html">Back</a>
     </main>
 
 </body>
