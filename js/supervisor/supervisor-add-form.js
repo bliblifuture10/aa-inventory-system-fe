@@ -4,28 +4,29 @@ $(document).ready(function(){
     });
 
     function addSupervisor(){
-        var formData = {
-            username: $("#username").val(),
-            password: $("#password").val(),
-            name: $("#fullname").val(),
-            email: $("#email").val(),
-            address: $("#address").val(),
-            phone: $("#phone").val(),
-            image: $("#image").val(),
-            role : null
-        };
-        
+        var form = $("#supervisor-form")[0];
+        var formData = new FormData(form);
+
+        formData.append("image", null);
+        formData.append("role", null);
         $.ajax({
             type: "POST",
-            contentType: "application/json",
+            enctype: "multipart/form-data",
             url: "/api/supervisor",
-            data: JSON.stringify(formData),
+            data: formData,
             dataType: "json",
+            processData: false,
+            contentType: false,
+            cache: false,
+            timeout: 1000000,
             success: function(response){
-                document.location.replace("./supervisor.html");
+                alert("Supervisor added");
+                window.document.location = "supervisor.html";
             },
-            error: function(){
-                alert("Error");
+            error: function(xhr, status, error){
+                var err = eval("(" + xhr.responseText + ")");
+                
+                alert(err.message);
             }
         });
     }

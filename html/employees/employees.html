@@ -61,11 +61,17 @@
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
         <h1>Employees</h1>
-        <div class="form-group">
+        <div class="input-group">
             <input id="fullname" type="text" class="form-control" placeholder="Search employee"/>
+            <div class="input-group-append">
+                <button id="search-employees" class="btn btn-primary" type="button">Search</button>
+            </div>
         </div>
-        <a class="btn btn-success" href="employee-add-form.html" style="float: right;">Add Employee</a>
-        <br><br><br>
+        <br>
+        <div id="btn-list" class="btn-group">
+            <a class="btn btn-success" href="employee-add-form.html" style="float: right;">Add Employee</a>
+        </div>
+        <br><br>
         <table class="table table-bordered">
             <thead class="thead-dark">
                 <tr>

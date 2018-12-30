@@ -4,9 +4,9 @@
     <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../../css/template/template.css" />
     <script src="../../js/jquery-3.3.1.min.js"></script>
-    <script src="../../js/employees/employee-update-form.js"></script>
+    <script src="../../js/employees/employee-add-form.js"></script>
 
-    <title>Update Employees</title>
+    <title>Request Transaction</title>
 </head>
 <body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
@@ -36,13 +36,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../transactions/transactions.html">
+                            <a class="nav-link active" href="../transactions/transactions.html">
                                 <span data-feather="transactions"></span>
                                 Transactions
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="../employees/employees.html">
+                            <a class="nav-link" href="../employees/employees.html">
                                 <span data-feather="employees"></span>
                                 Employees <span class="sr-only">(current)</span>
                             </a>
@@ -62,19 +62,19 @@
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item">Update Employee</li>
+                <li class="breadcrumb-item">Request Transaction</li>
             </ol>
         </nav>
         <div class="form-box">
-            <form id="employee-form" method="POST" enctype="multipart/form-data">
-                <!-- <div class="form-group">
+            <form id="transaction-form">
+                <div class="form-group">
                     <label>Username</label>
                     <input id="username" name="username" type="text" class="form-control" placeholder="Enter username" required/>
                 </div>
                 <div class="form-group">
                     <label>Password</label>
                     <input id="password" name="password" type="password" class="form-control" placeholder="Enter password" required/>
-                </div> -->
+                </div>
                 <div class="form-group">
                     <label>Full Name</label>
                     <input id="name" name="name" type="text" class="form-control" placeholder="Enter fullname" required/>
@@ -105,8 +105,8 @@
                         <input name="file" type="file" class="custom-file-input" id="customFile">
                     </div>
                 </div>
-                <button class="btn btn-success" type="submit">Update Employee</button>
-                <a id="back" class="btn btn-primary">Back</a>
+                <button class="btn btn-success" type="submit">Add Employee</button>
+                <a href="employees.html" class="btn btn-primary">Back</a>
             </form>
         </div>
     </main>

@@ -1,54 +1,61 @@
 $(document).ready(function(){
     var urlString = window.location.href;
     var url = new URL(urlString);
-    var prodId = url.searchParams.get("id");
+    var id = url.searchParams.get("id");
 
-    $.ajax({
-        type: "GET",
-        contentType: "application/json",
-        url: "/api/product/id/" + prodId,
-        dataType: "json",
-        success: function(response){
-            $("#name").attr("value", response.name);
-            $("#category").attr("value", response.category);
-            $("#stock").val(response.stock);
-            $("#price").attr("value", response.price);
-            $("#image").attr("value", response.image);
-        },
-        error: function(){
-            alert("Error get data");
-        }
-    });
+    loadData();
 
     $("#product-form").submit(function(event){
         event.preventDefault();
         updateProduct();
     });
 
-    $("#back").attr("href", "view-product.html?id=" + prodId);
+    $("#back").attr("href", "view-product.html?id=" + id);
 
-    function updateProduct(){
-        var formData = {
-            id: prodId,
-            name: $("#name").val(),
-            category: $("#category").val(),
-            stock: $("#stock").val(),
-            price: $("#price").val(),
-            image: $("#image").val(),
-        }
-        
+    function loadData(){
         $.ajax({
-            type: "PUT",
+            type: "GET",
             contentType: "application/json",
-            url: "/api/product",
-            data: JSON.stringify(formData),
+            url: "/api/product/id/" + id,
             dataType: "json",
-            success: function(){
-                alert("Product updated");
-                location.reload();
+            success: function(response){
+                var product = response.data;
+
+                $("#name").attr("value", product.name);
+                $("#category").attr("value", product.category);
+                $("#stock").val(product.stock);
+                $("#price").attr("value", product.price);
+                $("#image").attr("value", product.image);
             },
             error: function(){
-                alert("Error");
+                alert("Error get data");
+            }
+        });
+    }
+
+    function updateProduct(){
+        var form = $("#product-form")[0];
+        var formData = new FormData(form);
+
+        formData.append("image", null);
+        $.ajax({
+            type: "PUT",
+            enctype: "multipart/form-data",
+            url: "/api/product/id/" + id,
+            data: formData,
+            dataType: "json",
+            processData: false,
+            contentType: false,
+            cache: false,
+            timeout: 1000000,
+            success: function(response){
+                alert("Product updated");
+                window.document.location = "view-product.html?id=" + id;
+            },
+            error: function(xhr, status, error){
+                var err = eval("(" + xhr.responseText + ")");
+                
+                alert(err.message);
             }
         });
     }

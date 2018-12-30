@@ -3,23 +3,30 @@ $(document).ready(function(){
     var url = new URL(urlString);
     var id = url.searchParams.get("id");
 
+    loadData();
+
     $("#update-employee").attr("href", "employee-update-form.html?id="+id);
 
-    $.ajax({
-        type: "GET",
-        contentType: "application/json",
-        url: "/api/employee/id/" + id,
-        dataType: "json",
-        success: function(response){
-            $("#employee-profile").append(
-                "<p>" + response.name + "</p>" +
-                "<p>" + response.email + "</p>" +
-                "<p>" + response.address + "</p>" +
-                "<p>" + response.phone + "</p>"
-            );
-        },
-        error: function(){
-            alert("Error cuy");
-        }
-    });
+    function loadData(){
+        $.ajax({
+            type: "GET",
+            contentType: "application/json",
+            url: "/api/employee/id/" + id,
+            dataType: "json",
+            success: function(response){
+                var employee = response.data;
+
+                $("#employee-profile").append(
+                    "<p><img src='" + employee.image + "' alt='" + employee.name + "'/></p>" +
+                    "<p>" + employee.name + "</p>" +
+                    "<p>" + employee.email + "</p>" +
+                    "<p>" + employee.address + "</p>" +
+                    "<p>" + employee.phone + "</p>"
+                );
+            },
+            error: function(){
+                alert("Error");
+            }
+        });
+    }
 });

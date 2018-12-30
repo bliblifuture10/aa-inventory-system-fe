@@ -66,34 +66,30 @@
             </ol>
         </nav>
         <div class="form-box">
-            <form id="product-form">
+            <form id="product-form" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label>Name</label>
-                    <input id="name" type="text" class="form-control" placeholder="Enter product name" required/>
+                    <input id="name" name="name" type="text" class="form-control" placeholder="Enter product name" required/>
                 </div>
                 <div class="form-group">
                     <label>Category</label>
-                    <input id="category" type="text" class="form-control" placeholder="Enter product category" required/>
+                    <input id="category" name="category" type="text" class="form-control" placeholder="Enter product category" required/>
                 </div>
                 <div class="form-group">
                     <label>Stock</label>
-                    <input id="stock" type="text" class="form-control" placeholder="Enter product stock" required/>
+                    <input id="stock" name="stock" type="text" class="form-control" placeholder="Enter product stock" required/>
                 </div>
                 <div class="form-group">
                     <label>Price</label>
-                    <input id="price" type="text" class="form-control" placeholder="Enter product price" required/>
+                    <input id="price" name="price" type="text" class="form-control" placeholder="Enter product price" required/>
                 </div>
                 <div class="form-group">
-                    <label>Product Image</label>
-                    <input id="image" type="text" class="form-control" placeholder="Enter phone number" required/>
-                </div>
-                <!-- <div class="form-group">
                     <label>Profile Image</label>
                     <div class="custom-file">
                         <label class="custom-file-label" for="customFile">Choose file</label>
-                        <input type="file" class="custom-file-input" id="customFile">
+                        <input name="file" type="file" class="custom-file-input" id="customFile">
                     </div>
-                </div> -->
+                </div>
                 <button class="btn btn-success" type="submit">Update Product</button>
                 <a id="back" class="btn btn-primary">Back</a>
             </form>
